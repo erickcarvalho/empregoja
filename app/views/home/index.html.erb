@@ -1,7 +1,7 @@
 <h1>Emprego Já</h1>
 
 <% @jobs.each do |job| %>
-  <h1><%= job.title  %></h1>
+  <h1><%= link_to job.title, job_path(job)  %></h1>
   <%= job.category  %>
   <%= job.company  %>
   <%= job.location %>
