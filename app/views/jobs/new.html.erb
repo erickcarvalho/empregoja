@@ -9,5 +9,7 @@
   <%= job.text_field :company %>
   <%= job.label :description, 'Descrição' %>
   <%= job.text_field :description %>
+  <%= job.label :featured, 'Destaque' %>
+  <%= job.check_box :featured %>
   <%= job.submit( "Criar Vaga" ) %>
 <% end %>

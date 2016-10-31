@@ -5,5 +5,7 @@
   <%= job.category  %>
   <%= job.company  %>
   <%= job.location %>
-  <%= job.featured %>
+  <% if job.featured %>
+    <strong>Destaque</strong>
+  <% end %>
 <% end %>

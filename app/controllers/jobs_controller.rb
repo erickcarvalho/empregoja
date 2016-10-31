@@ -9,7 +9,7 @@ class JobsController < ApplicationController
   end
 
   def create
-    job_param = params.require(:job).permit(:title, :company, :category, :description, :location)
+    job_param = params.require(:job).permit(:title, :company, :category, :description, :location, :featured)
     job = Job.create(job_param)
     redirect_to job
   end
