@@ -1,0 +1,13 @@
+<%= form_for @new_job do |job| %>
+  <%= job.label :title, 'Título' %>
+  <%= job.text_field :title %>
+  <%= job.label :location, 'Local' %>
+  <%= job.text_field :location %>
+  <%= job.label :category, 'Categoria' %>
+  <%= job.text_field :category %>
+  <%= job.label :company, 'Empresa' %>
+  <%= job.text_field :company %>
+  <%= job.label :description, 'Descrição' %>
+  <%= job.text_field :description %>
+  <%= job.submit( "Criar Vaga" ) %>
+<% end %>
