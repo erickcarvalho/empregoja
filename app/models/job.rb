@@ -1,2 +1,2 @@
-class Job < ApplicationRecord
+rails class Job < ApplicationRecord
 end
