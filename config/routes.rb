@@ -3,5 +3,4 @@ Rails.application.routes.draw do
 
   root to: "home#index"
   resources :jobs , only:[:show, :new, :create]
-  # get 'home/:id',  to: "home#show", as: 'job'
 end
