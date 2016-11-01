@@ -1,5 +1,12 @@
-require 'rails_helper'
+require "rails_helper"
 
-# RSpec.describe Job, type: :model do
-#   pending "add some examples to (or delete) #{__FILE__}"
-# end
+RSpec.describe Job, :type => :model do
+  it 'should be valid' do
+    job = Job.create()
+    expect(job).not_to be_valid
+    expect(job.errors[:title]).to include("can't be blank")
+    expect(job.errors[:location]).to include("can't be blank")
+    expect(job.errors[:description]).to include("can't be blank")
+    expect(job.errors[:category]).to include("can't be blank")
+  end
+end
