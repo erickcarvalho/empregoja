@@ -2,7 +2,7 @@
 
 Title: <h1><%= @job.title %></h1>
 Category: <%= @job.category %>
-Company: <%= @job.company %>
+Company: <%= @job.company.name %>
 Description: <%= @job.description %>
 Location: <%= @job.location %>
 <% if @job.featured %>
