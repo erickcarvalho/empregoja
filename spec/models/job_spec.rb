@@ -1,5 +1,4 @@
 require "rails_helper"
-
 RSpec.describe Job, :type => :model do
   it 'should be valid' do
     job = Job.create()
