@@ -1,0 +1,11 @@
+<%= form_for @job do |f| %>
+  <%= f.label :title, "Título" %>
+  <%= f.text_field :title %>
+  <%= f.label :location, "Local" %>
+  <%= f.text_field :location %>
+  <%= f.label :category, "Categoria" %>
+  <%= f.text_field :category%>
+  <%= f.label :description, "Descrição" %>
+  <%= f.text_field :description %>
+  <%= f.submit("Atualizar Vaga") %>
+<% end %>
