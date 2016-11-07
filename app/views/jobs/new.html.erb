@@ -1,17 +1,1 @@
-
-
-  <%= form_for @job do |job| %>
-    <%= job.label :title, 'Título' %>
-    <%= job.text_field :title %>
-    <%= job.label :location, 'Local' %>
-    <%= job.text_field :location %>
-    <%= job.label :category, 'Categoria' %>
-    <%= job.text_field :category %>
-    <%= job.label :company_id, 'Empresa' %>
-    <%= job.collection_select :company_id, Company.all, :id, :name %>
-    <%= job.label :description, 'Descrição' %>
-    <%= job.text_field :description %>
-    <%= job.label :featured, 'Destaque' %>
-    <%= job.check_box :featured %>
-    <%= job.submit( "Criar Vaga" ) %>
-  <% end %>
+ <%= render partial: 'job', locals: { button_text: 'Criar Vaga'} %>
