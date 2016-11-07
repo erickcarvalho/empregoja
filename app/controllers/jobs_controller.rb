@@ -36,7 +36,7 @@ class JobsController < ApplicationController
     if @job.update(job_param)
       redirect_to @job
     else
-      flash[:error] = "Não foi possível editar a vaga"
+      flash[:error] = "Não foi possível atualizar a vaga"
       render :new
     end
   end

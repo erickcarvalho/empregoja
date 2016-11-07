@@ -1,6 +1,8 @@
 <%= form_for @job do |f| %>
   <%= f.label :title, "Título" %>
   <%= f.text_field :title %>
+  <%= f.label :company_id, 'Empresa' %>
+  <%= f.collection_select :company_id, Company.all, :id, :name %>
   <%= f.label :location, "Local" %>
   <%= f.text_field :location %>
   <%= f.label :category, "Categoria" %>
