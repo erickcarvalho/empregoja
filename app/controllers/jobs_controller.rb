@@ -1,5 +1,7 @@
 class JobsController < ApplicationController
 
+  before_action :load_collections
+
   def show
     id = params[:id]
     @job = Job.find(id)
@@ -10,8 +12,8 @@ class JobsController < ApplicationController
   end
 
   def create
-    job_param = params.require(:job).permit(:title, :company_id, :category, :description, :location, :featured)
-    @job = Job.new(job_param)
+
+    @job = Job.new(job_params)
 
     if @job.save
       redirect_to @job
@@ -30,15 +32,23 @@ class JobsController < ApplicationController
     id = params[:id]
     @job = Job.find(id)
 
-    job_param = params.require(:job).permit(:title, :company_id, :category, :description, :location, :featured)
-
-
-    if @job.update(job_param)
+    if @job.update(job_params)
       redirect_to @job
     else
       flash[:error] = "Não foi possível atualizar a vaga"
       render :new
     end
+  end
+
+  private
+
+  def job_params
+    job_param = params.require(:job).permit(:title, :company_id, :category_id, :description, :location, :featured)
+  end
+
+  def load_collections
+    @categories = Category.all
+    @companies = Company.all
   end
 end
 

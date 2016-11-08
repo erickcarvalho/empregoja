@@ -5,4 +5,5 @@ class Job < ApplicationRecord
   validates :category, presence: true
 
   belongs_to :company
+  belongs_to :category
 end

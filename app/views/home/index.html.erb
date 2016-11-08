@@ -2,13 +2,17 @@ Emprego Já
 
 <% @jobs.each do |job| %>
   <h1><%= link_to job.title, job_path(job)  %></h1>
-  <%= job.category  %>
+  <%= job.category.name  %>
   <%= job.company.name  %>
   <%= job.location %>
   <% if job.featured %>
     <strong>Destaque</strong>
   <% end %>
 <% end %>
-
 <p>
 <%= link_to 'Nova Vaga', new_job_path  %>
+
+<% @companies.each do |company| %>
+<%= link_to company.name, company_path(company) %>
+<% end %>
+<h1><

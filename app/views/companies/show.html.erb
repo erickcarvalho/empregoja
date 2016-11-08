@@ -2,3 +2,12 @@
 <%= @company.location %>
 <%= @company.mail %>
 <%= @company.phone %>
+
+<% if @company.jobs.count == 0 %>
+  Nenhuma vaga disponível
+<% else %>
+  <% @company.jobs.each do |job| %>
+  Titulo: <%= job.title %>
+  Categoria: <%= job.category.name %>
+  <% end %>
+<% end %>
