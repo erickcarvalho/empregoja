@@ -8,7 +8,7 @@ require 'rails_helper'
       fill_in 'Categoria', with: 'Desenvolvedor'
       click_on 'Criar Categoria'
 
-      expect(page).to have_content(text: 'Categoria criada com sucesso')
+      expect(page).to have_content('Categoria criada com sucesso')
 
     end
 
@@ -23,7 +23,7 @@ require 'rails_helper'
       fill_in 'Categoria', with: 'Analista'
       click_on 'Criar Categoria'
 #expectativas
-      expect(page).to have_content(text: 'Categoria já cadastrada')
+      expect(page).to have_content 'Não foi possivel salvar'
 
     end
 
@@ -31,9 +31,10 @@ require 'rails_helper'
 
       visit new_category_path
 
-      click_on 'Criar categoria'
+      click_on 'Criar Categoria'
 
-      expect(page).to have_content 'Não é possível criar categoria em branco'
+      expect(page).to have_content 'Não foi possivel salvar'
+      # expect(page).to match(/Nao foi possivel salvar/)
 
     end
   end
