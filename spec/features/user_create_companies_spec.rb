@@ -13,7 +13,7 @@ feature 'User create companies' do
     fill_in 'Local',     with: company.location
     fill_in 'Email',     with: company.mail
     fill_in 'Telefone',  with: company.phone
-    
+
     click_on 'Criar Empresa'
 
     expect(page).to have_css('h1', text: company.name)
