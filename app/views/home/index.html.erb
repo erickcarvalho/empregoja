@@ -15,4 +15,7 @@ Emprego Já
 <% @companies.each do |company| %>
 <%= link_to company.name, company_path(company) %>
 <% end %>
-<h1><
+
+<% @categories.each do |category| %>
+<%= link_to category.name, category_path(category) %>
+<% end %>
