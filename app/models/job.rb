@@ -6,4 +6,13 @@ class Job < ApplicationRecord
 
   belongs_to :company
   belongs_to :category
+
+  def expired?
+    if created_at < 90.days.ago
+      true
+    else
+      false
+    end
+  end
+
 end
