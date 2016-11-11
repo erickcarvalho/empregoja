@@ -1,12 +1,15 @@
 <h1>Detalhe Emprego</h1>
-
-Title: <h1><%= @job.title %></h1>
-Category: <%= @job.category.name %>
-Company: <%= @job.company.name %>
-Description: <%= @job.description %>
-Location: <%= @job.location %>
-<% if @job.featured %>
-  <strong>Destaque</strong>
+<% unless @job.expired? %>
+  Title: <h1><%= @job.title %></h1>
+  Category: <%= @job.category.name %>
+  Company: <%= @job.company.name %>
+  Description: <%= @job.description %>
+  Location: <%= @job.location %>
+  <% if @job.featured %>
+    <strong>Destaque</strong>
+  <% end %>
+  <p>
+<% else %>
+Vaga Expirada
 <% end %>
-<p>
 <%= link_to 'Voltar', root_path %>

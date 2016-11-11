@@ -8,11 +8,11 @@ class Job < ApplicationRecord
   belongs_to :category
 
   def expired?
-    if created_at < 90.days.ago
-      true
-    else
-      false
-    end
+     created_at < 90.days.ago
+  end
+
+  def recent?
+    created_at > 6.days.ago
   end
 
 end

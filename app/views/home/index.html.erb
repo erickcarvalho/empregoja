@@ -1,12 +1,14 @@
 Emprego Já
 
 <% @jobs.each do |job| %>
-  <h1><%= link_to job.title, job_path(job)  %></h1>
-  <%= job.category.name  %>
-  <%= job.company.name  %>
-  <%= job.location %>
-  <% if job.featured %>
-    <strong>Destaque</strong>
+  <% unless job.expired? %>
+    <h1><%= link_to job.title, job_path(job)  %></h1>
+      <%= job.category.name  %>
+      <%= job.company.name  %>
+      <%= job.location %>
+    <% if job.featured %>
+      <strong>Destaque</strong>
+    <% end %>
   <% end %>
 <% end %>
 <p>
